@@ -39,10 +39,6 @@ app.use(cors());
   
 // });
 
-// app.listen(8000, () => {
-//   console.log('Server started on PORT 8000');
-// });
-
 
 const apps = require('./playstore.js');
 // console.log(apps);
@@ -69,7 +65,7 @@ app.get('/apps', (req, res) => {
   if (genre) {
 		results = apps
     .filter(app => 
-      return app
+      app
         .Genres
         .toLowerCase()
         .includes(genre.toLowerCase()));
@@ -88,8 +84,6 @@ app.get('/apps', (req, res) => {
   
 });
 
-app.listen(8000, () => {
-  console.log('Server started on PORT 8000');
-});
+module.exports = app;
 
 
